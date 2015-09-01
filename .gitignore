@@ -36,5 +36,6 @@ DerivedData
 
 #CocoaPods
 Pods
-=======
->>>>>>> e7b3da3727972161d0ed531668500f6b50bb849b
+
+#.DS_Store
+.DS_Store
