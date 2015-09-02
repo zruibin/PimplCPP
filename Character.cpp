@@ -10,6 +10,9 @@
 #include "Character.h"
 #include <stdio.h>
 
+namespace RBSpace {
+    
+    
 class Character::CharacterImpl
 {
 public:
@@ -50,6 +53,10 @@ int Character::getStr2()
     printf("num+num:%d\n", this->imp->getNmu() + this->imp->getNmu());
     return 0;
 }
+
+    
+} // end of namespace
+
 
 
 

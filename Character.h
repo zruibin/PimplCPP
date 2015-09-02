@@ -8,6 +8,11 @@
 
 //http://blog.csdn.net/lihao21/article/details/47610309
 
+#ifndef CHARACTER_H_
+#define CHARACTER_H_
+
+namespace RBSpace {
+ 
 class Character {
     
 public:
@@ -21,4 +26,11 @@ private:
 
     class CharacterImpl;
     CharacterImpl *imp;
-};
+};   
+    
+    
+ 
+} // end of namespace
+
+#endif
+

@@ -44,7 +44,7 @@ $(PROJECT):$(OBJS)
 	$(GCC) -o $@ $^
 
 	# 生成静态库
-	ar rc $(OBJDIR)lib.a $(OBJS)
+	# ar rc $(OBJDIR)lib.a $(OBJS)
 	# 生成动态库
 	# gcc $(SOURCES) -I -fPIC -shared -o $(OBJDIR)lib.so 
 
