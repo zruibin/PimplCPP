@@ -41,7 +41,6 @@ private:
 Character::Character(void)
 {
     this->imp = new Character::CharacterImpl(1);
-    this->imp->description();
 }
 
 Character::~Character(void)
