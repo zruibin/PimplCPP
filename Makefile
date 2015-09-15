@@ -5,7 +5,8 @@
 PROJECT=./obj/main
 MYLIB=
 SYSLIB=-lpthread
-CFLAG=-g
+CFLAG=-g 
+WARNING=-w
 CC=g++
 GCC=g++
 OBJDIR=obj/
@@ -41,7 +42,7 @@ OBJS= $(foreach n,$(OBJECTS), $(OBJDIR)$(n))
 $(MKDIROBJ):
 
 $(PROJECT):$(OBJS)
-	$(GCC) -o $@ $^
+	$(GCC) -o $@ $^ $(CFLAG) $(WARNING)
 
 	# 生成静态库
 	# ar rc $(OBJDIR)lib.a $(OBJS)
@@ -49,10 +50,10 @@ $(PROJECT):$(OBJS)
 	# gcc $(SOURCES) -I -fPIC -shared -o $(OBJDIR)lib.so 
 
 $(OBJDIR)%.o:%.cpp
-	$(GCC) -c -o $@ $<
+	$(GCC) -c -o $@ $< $(CFLAG) $(WARNING)
 
 
-.PHONY : clean show
+.PHONY : clean show run
 
 clean:
 	rm -f $(OBJDIR)/*.o $(PROJECT)
@@ -60,6 +61,8 @@ clean:
 	rm -f $(OBJDIR)lib.so
 	rmdir -p $(OBJDIR)
 
+run:
+	$(PROJECT)
 
 
 show:

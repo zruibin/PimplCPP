@@ -9,6 +9,8 @@
 
 #include <iostream>
 #include "Character.h"
+#include "Attribute.h"
+
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -24,3 +26,11 @@ int main(int argc, const char * argv[]) {
     
     return 0;
 }
+
+
+
+
+
+
+
+
