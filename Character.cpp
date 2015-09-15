@@ -19,6 +19,7 @@ public:
     CharacterImpl(int _num)
     {
         this->num = _num;
+        this->description();
     }
     
     int getNmu()
@@ -29,12 +30,18 @@ public:
     
 private:
     int num;
+
+    void description(void) const
+    {
+        printf("Character::CharacterImpl->description\n");
+    }
 };
 
 
 Character::Character(void)
 {
     this->imp = new Character::CharacterImpl(1);
+    this->imp->description();
 }
 
 Character::~Character(void)
@@ -43,7 +50,8 @@ Character::~Character(void)
     this->imp = NULL;
 }
 
-int Character::getStr() {
+int Character::getStr() 
+{
     printf("num:%d\n", this->imp->getNmu());
     return 0;
 }
@@ -53,7 +61,6 @@ int Character::getStr2()
     printf("num+num:%d\n", this->imp->getNmu() + this->imp->getNmu());
     return 0;
 }
-
     
 } // end of namespace
 

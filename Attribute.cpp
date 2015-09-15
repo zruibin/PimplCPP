@@ -1,5 +1,5 @@
 //
-//  Character.cpp
+//  Attribute.cpp
 //  RBCHOW
 //
 //  Created by RBCHOW on 15/6/6.
