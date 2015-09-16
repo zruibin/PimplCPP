@@ -10,6 +10,7 @@ WARNING=-w
 CC=g++
 GCC=g++
 OBJDIR=obj/
+INCLUDE=-I asm/
 
 # 当前目录下带路径的所有后缀为.c的源文件
 SRCS = $(shell find . -name '*.cpp')
@@ -42,7 +43,7 @@ OBJS= $(foreach n,$(OBJECTS), $(OBJDIR)$(n))
 $(MKDIROBJ):
 
 $(PROJECT):$(OBJS)
-	$(GCC) -o $@ $^ $(CFLAG) $(WARNING)
+	$(GCC) -o $@ $^ $(CFLAG) $(WARNING) $(INCLUDE)
 
 	# 生成静态库
 	# ar rc $(OBJDIR)lib.a $(OBJS)
@@ -50,7 +51,7 @@ $(PROJECT):$(OBJS)
 	# gcc $(SOURCES) -I -fPIC -shared -o $(OBJDIR)lib.so 
 
 $(OBJDIR)%.o:%.cpp
-	$(GCC) -c -o $@ $< $(CFLAG) $(WARNING)
+	$(GCC) -c -o $@ $< $(CFLAG) $(WARNING) $(INCLUDE)
 
 
 .PHONY : clean show run

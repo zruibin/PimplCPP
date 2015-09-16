@@ -10,7 +10,7 @@
 #include <iostream>
 #include "Character.h"
 #include "Attribute.h"
-
+#include "ASM.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -24,6 +24,7 @@ int main(int argc, const char * argv[]) {
     delete ch;
     ch = NULL;
     
+    testASM001();
     return 0;
 }
 

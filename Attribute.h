@@ -6,7 +6,8 @@
 //  Copyright (c) 2015年 www.zruibin.asia. All rights reserved.
 //
 
-
+#ifndef ATTRIBUTE_H_
+#define ATTRIBUTE_H_
 
 /*
     https://gcc.gnu.org/onlinedocs/gcc/Function-Attributes.html
@@ -20,7 +21,7 @@ static void before() __attribute__((constructor));
 static void after() __attribute__((destructor));
 
 
-
+#endif
 
 
 
