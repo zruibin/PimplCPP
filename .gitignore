@@ -31,8 +31,9 @@ DerivedData
 .idea/
 *.hmap
 
-#svn文件夹忽略
+#文件夹忽略
 .svn/
+/obj/
 
 #CocoaPods
 Pods

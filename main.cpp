@@ -11,6 +11,7 @@
 #include "Character.h"
 #include "Attribute.h"
 #include "ASM.h"
+#include "RBMarco.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -23,6 +24,8 @@ int main(int argc, const char * argv[]) {
     
     delete ch;
     ch = NULL;
+
+    DLog("test:%s", "zruibin\n");
     
     testASM001();
     return 0;
