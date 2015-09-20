@@ -19,7 +19,9 @@
 // __TIME__：在源文件中插入当前编译时间；
 // __STDC__：当要求程序严格遵循ANSI C标准时该标识被赋值为1；
 // __cplusplus：当编写C++程序时该标识符被定义。
-#define DLog(format, arg...) do { fprintf(stderr, "[%s:%d] " format , __FILE__, __LINE__, ##arg ); } while (0)  
+
+#define DLog(format, arg...) do { fprintf(stderr, "[%s:%d] " format , __FILE__, __LINE__, ##arg); } while (0)  
+
 #else
 #define DLog(format, ...)
 #endif

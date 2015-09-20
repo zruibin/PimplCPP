@@ -12,6 +12,7 @@
 #include "Attribute.h"
 #include "ASM.h"
 #include "RBMarco.h"
+#include "HttpTest.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -28,6 +29,9 @@ int main(int argc, const char * argv[]) {
     DLog("test:%s", "zruibin\n");
     
     testASM001();
+
+    RBSpace::testHttpClient();
+
     return 0;
 }
 
