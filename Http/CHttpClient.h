@@ -7,8 +7,8 @@
 //
 //
 
-#ifndef _CHTTPCLIENT_H_
-#define _CHTTPCLIENT_H_
+#ifndef CHTTPCLIENT_H_
+#define CHTTPCLIENT_H_
 
 #include <string>
 

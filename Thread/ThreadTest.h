@@ -7,8 +7,8 @@
 //
 //
 
-#ifndef _THREADTEST_H_
-#define _THREADTEST_H_
+#ifndef THREADTEST_H_
+#define THREADTEST_H_
 
 namespace RBSpace {
 

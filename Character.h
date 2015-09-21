@@ -8,8 +8,8 @@
 
 //http://blog.csdn.net/lihao21/article/details/47610309
 
-#ifndef _CHARACTER_H_
-#define _CHARACTER_H_
+#ifndef CHARACTER_H_
+#define CHARACTER_H_
 
 namespace RBSpace {
  
@@ -23,7 +23,6 @@ public:
     int getStr2();
 
 private:
-
     class CharacterImpl;
     CharacterImpl *imp;
 };   

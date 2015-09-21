@@ -20,7 +20,7 @@ SRCS = $(shell find . -name '*.cpp')
 FILTEROBJ = . ./obj
 
 # 列出当前目录下的所有目录并过滤自定义要过滤的并转换的目录
-DIRSUNSUBST = $(filter-out $(FILTEROBJ), $(shell find . -type d))
+DIRSUNSUBST = $(filter-out $(FILTEROBJ), $(shell find . -type d ! -path "*.git*"))
 DIRS = $(foreach n, $(DIRSUNSUBST), $(subst ./, , $(n)))
 
 # 创建目录

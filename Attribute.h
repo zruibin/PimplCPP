@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 www.zruibin.asia. All rights reserved.
 //
 
-#ifndef _ATTRIBUTE_H_
-#define _ATTRIBUTE_H_
+#ifndef ATTRIBUTE_H_
+#define ATTRIBUTE_H_
 
 /*
     https://gcc.gnu.org/onlinedocs/gcc/Function-Attributes.html

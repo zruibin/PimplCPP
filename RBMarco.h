@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 www.zruibin.asia. All rights reserved.
 //
 
-#ifndef RBMarco_H_
-#define RBMarco_H_
+#ifndef RBMARCO_H_
+#define RBMARCO_H_
 
 #define _DEBUG 1
 
