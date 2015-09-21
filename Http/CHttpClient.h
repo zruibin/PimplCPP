@@ -7,8 +7,8 @@
 //
 //
 
-#ifndef __HTTP_CURL_H__
-#define __HTTP_CURL_H__
+#ifndef _CHTTPCLIENT_H_
+#define _CHTTPCLIENT_H_
 
 #include <string>
 

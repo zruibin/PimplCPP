@@ -7,6 +7,9 @@
 //
 //
 
+#ifndef _THREADTEST_H_
+#define _THREADTEST_H_
+
 namespace RBSpace {
 
 //http://blog.csdn.net/hitwengqi/article/details/8015646
@@ -16,5 +19,5 @@ void threadTest(void);
 } // end of namespace
 
 
-
+#endif
 
