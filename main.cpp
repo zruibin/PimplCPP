@@ -13,6 +13,7 @@
 #include "ASM.h"
 #include "RBMarco.h"
 #include "HttpTest.h"
+#include "ThreadTest.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -30,7 +31,8 @@ int main(int argc, const char * argv[]) {
     
     testASM001();
 
-    RBSpace::testHttpClient();
+    // RBSpace::testHttpClient(); //测试curl
+    RBSpace::threadTest(); //测试多线程
 
     return 0;
 }

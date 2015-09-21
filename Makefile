@@ -2,7 +2,7 @@
 # 自定义obj自动生成与自动删除
 # 添加生成静态库与动态库
 
-PROJECT=./obj/main
+PROJECT=./obj/PimplCPP
 MYLIB=
 SYSLIB=-lpthread
 CFLAG=-g 
@@ -10,7 +10,7 @@ WARNING=-w
 CC=g++
 GCC=g++
 OBJDIR=obj/
-INCLUDE=-I ./ -I asm/ -I Http/
+INCLUDE=-I ./ -I asm/ -I Http/ -I Thread/
 LIB=-lcurl  -L./Http/curl -lz
 
 # 当前目录下带路径的所有后缀为.c的源文件
@@ -58,10 +58,11 @@ $(OBJDIR)%.o:%.cpp
 .PHONY : clean show run
 
 clean:
-	rm -f $(OBJDIR)/*.o $(PROJECT)
-	rm -f $(OBJDIR)lib.a
-	rm -f $(OBJDIR)lib.so
-	rmdir -p $(OBJDIR)
+	# rm -f $(OBJDIR)/*.o $(PROJECT)
+	# rm -f $(OBJDIR)lib.a
+	# rm -f $(OBJDIR)lib.so
+	# rmdir -p $(OBJDIR)
+	rm -rf $(OBJDIR)
 
 run:
 	$(PROJECT)
