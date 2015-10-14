@@ -1,13 +1,13 @@
 //
-//  RBMarco.h
+//  RBMacros.h
 //  RBCHOW
 //
 //  Created by RBCHOW on 15/9/17.
 //  Copyright (c) 2015年 www.zruibin.asia. All rights reserved.
 //
 
-#ifndef RBMARCO_H_
-#define RBMARCO_H_
+#ifndef RBMACROS_H_
+#define RBMACROS_H_
 
 #define _DEBUG 1
 
