@@ -39,6 +39,7 @@ int main(int argc, char* argv[])
        class_init(obj);
        printf("obj version:%d\n", obj->version);
        obj->description(obj);
+       printf("isa:%p -- obj:%p\n",  obj->isa, obj);
        release(obj);
 
        return 0;

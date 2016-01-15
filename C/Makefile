@@ -10,8 +10,8 @@ WARNING=-w
 CC=g++
 GCC=g++
 OBJDIR=obj/
-INCLUDE=-I ./ -I asm/ -I Http/ -I Thread/
-LIB=-lcurl  -L./Http/curl -lz
+INCLUDE= #-I ./ -I asm/ -I Http/ -I Thread/
+LIB= #-lcurl  -L./Http/curl -lz
 
 # 当前目录下带路径的所有后缀为.c的源文件
 SRCS = $(shell find . -name '*.c')

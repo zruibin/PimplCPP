@@ -15,9 +15,9 @@
 #define release(obj) { if(obj) { free(obj); (obj)=NULL; } }
 
 
-typedef struct objc_class Class;
+// typedef struct objc_class Class;
 
-struct objc_class
+typedef struct Class /*必须定义*/
 {
     Class *super_class;
     Class *isa;
@@ -25,7 +25,7 @@ struct objc_class
     long version;
     long info;
     void (*description)(Class *obj);
-};
+}Class; /*可以不定义*/
 
 
 void description(Class *obj);
