@@ -10,6 +10,7 @@
 #ifndef _CLASS_H
 #define _CLASS_H
 
+#include <stdlib.h>
 
 #define alloc(Class) (Class *)malloc(sizeof(Class))
 #define release(obj) { if(obj) { free(obj); (obj)=NULL; } }
@@ -31,10 +32,20 @@ typedef struct Class /*必须定义*/
     void (*printIVar)(Class *obj);
 }Class; /*可以不定义*/
 
+/**
+ * 默认构造函数
+ * @return  模拟类的对象指针
+ */
+Class * class_init(void);
+
+/**
+ * 带初始化参数的构造函数
+ * @param  name [description]
+ * @return      [description]
+ */
+Class * class_init(const char *name);
 
 void description(Class *obj);
-
-void class_init(Class *obj);
 
 void printIVar(Class *obj);
 

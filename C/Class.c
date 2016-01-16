@@ -16,13 +16,9 @@ typedef struct Ivar
 };
 
 
-void description(Class *obj)
+Class * class_init(void)
 {
-    printf("%s -> %s\n", "This is Class!", obj->name);
-}
-
-void class_init(Class *obj)
-{
+    Class *obj = alloc(Class);
     obj->super_class = NULL;
     obj->isa = obj;
     obj->name = "Class";
@@ -32,6 +28,21 @@ void class_init(Class *obj)
     obj->printIVar = printIVar;
 
     obj->vars->var = "varName";
+
+    return obj;
+}
+
+Class * class_init(const char *name)
+{
+    Class *obj = class_init();
+    obj->name = name;
+    return obj;
+}
+
+
+void description(Class *obj)
+{
+    printf("%s -> %s\n", "This is Class!", obj->name);
 }
 
 void printIVar(Class *obj)

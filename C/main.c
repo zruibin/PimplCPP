@@ -9,7 +9,7 @@
 
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <assert.h>
 
 #include "Class.h"
 #include "Sample.h"
@@ -34,11 +34,10 @@ int main(int argc, char* argv[])
        B_F2(&b);//成员函数，因为效率问题不使用函数指针
 
 
-
-       Class *obj = alloc(Class);
-       class_init(obj);
+       // Class *obj = class_init();
+       Class *obj = class_init("Class with init");
        printf("obj version:%d\n", obj->version);
-       obj->name = "Class 2";
+       // obj->name = "Class 2";
        obj->description(obj);
        printf("isa:%p -- obj:%p\n",  obj->isa, obj);
 
@@ -46,6 +45,8 @@ int main(int argc, char* argv[])
        obj->printIVar(obj);
 
        release(obj);
+
+       assert(obj != NULL);
 
        return 0;
 }
