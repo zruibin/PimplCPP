@@ -10,6 +10,12 @@
 #include "Class.h"
 #include <stdio.h>
 
+typedef struct Ivar
+{
+    const char *var;
+};
+
+
 void description(Class *obj)
 {
     printf("%s -> %s\n", "This is Class!", obj->name);
@@ -23,7 +29,13 @@ void class_init(Class *obj)
     obj->version = 1.0;
     obj->info = 1.0;
     obj->description = description;
+    obj->printIVar = printIVar;
+
+    obj->vars->var = "varName";
 }
 
-
+void printIVar(Class *obj)
+{
+    printf("var printIVar ->%s\n", obj->vars->var);
+}
 

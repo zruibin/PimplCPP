@@ -38,8 +38,13 @@ int main(int argc, char* argv[])
        Class *obj = alloc(Class);
        class_init(obj);
        printf("obj version:%d\n", obj->version);
+       obj->name = "Class 2";
        obj->description(obj);
        printf("isa:%p -- obj:%p\n",  obj->isa, obj);
+
+       // printf("var->%s\n", obj->vars->vars); //不可，有访问限制
+       obj->printIVar(obj);
+
        release(obj);
 
        return 0;

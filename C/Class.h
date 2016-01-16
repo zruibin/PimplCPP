@@ -14,6 +14,7 @@
 #define alloc(Class) (Class *)malloc(sizeof(Class))
 #define release(obj) { if(obj) { free(obj); (obj)=NULL; } }
 
+typedef struct Ivar;
 
 // typedef struct objc_class Class;
 
@@ -21,10 +22,13 @@ typedef struct Class /*必须定义*/
 {
     Class *super_class;
     Class *isa;
+    Ivar *vars;
     const char *name;
     long version;
     long info;
     void (*description)(Class *obj);
+
+    void (*printIVar)(Class *obj);
 }Class; /*可以不定义*/
 
 
@@ -32,5 +36,6 @@ void description(Class *obj);
 
 void class_init(Class *obj);
 
+void printIVar(Class *obj);
 
 #endif
