@@ -33,6 +33,14 @@ int main(int argc, char* argv[])
        a.Foo(&a);//不是多态了
        B_F2(&b);//成员函数，因为效率问题不使用函数指针
 
+       if (true) printf("true\n"); 
+
+       if (false) {
+              printf("false\n");
+       } else {
+              printf("true\n");
+       }
+
 
        // Class *obj = class_init();
        Class *obj = class_init("Class with init");
@@ -47,6 +55,7 @@ int main(int argc, char* argv[])
        release(obj);
 
        assert(obj != NULL);
+
 
        return 0;
 }

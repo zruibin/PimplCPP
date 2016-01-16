@@ -15,6 +15,19 @@
 #define alloc(Class) (Class *)malloc(sizeof(Class))
 #define release(obj) { if(obj) { free(obj); (obj)=NULL; } }
 
+
+#ifndef __cplusplus
+
+typedef char bool;
+typedef char BOOL;
+typedef char boolean;
+
+#define false !0;
+#define true 0;
+
+#endif /* __cplusplus */
+
+
 typedef struct Ivar;
 
 // typedef struct objc_class Class;
