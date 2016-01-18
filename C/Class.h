@@ -42,6 +42,8 @@ typedef struct Class /*必须定义*/
     long info;
     void (*description)(Class *obj);
 
+    Class * (*copy)(Class *obj);
+
     void (*printIVar)(Class *obj);
 }Class; /*可以不定义*/
 
@@ -49,14 +51,21 @@ typedef struct Class /*必须定义*/
  * 默认构造函数
  * @return  模拟类的对象指针
  */
-Class * class_init(void);
+Class * Class_init(void);
 
 /**
  * 带初始化参数的构造函数
  * @param  name [description]
  * @return      [description]
  */
-Class * class_init(const char *name);
+Class * Class_init(const char *name);
+
+/**
+ * 深拷贝函数
+ * @param  obj 源拷贝对象
+ * @return     结果对象
+ */
+Class * copy(Class *obj);
 
 void description(Class *obj);
 

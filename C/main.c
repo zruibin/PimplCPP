@@ -42,8 +42,8 @@ int main(int argc, char* argv[])
        }
 
 
-       // Class *obj = class_init();
-       Class *obj = class_init("Class with init");
+       Class *obj = Class_init();
+       // Class *obj = Class_init("Class with init");
        printf("obj version:%d\n", obj->version);
        // obj->name = "Class 2";
        obj->description(obj);
@@ -52,10 +52,16 @@ int main(int argc, char* argv[])
        // printf("var->%s\n", obj->vars->vars); //不可，有访问限制
        obj->printIVar(obj);
 
+       printf("------------------------------\n");
+       Class *temp = obj->copy(obj);
+       temp->name = "temp object";
+       temp->description(temp);
+       obj->description(obj);
+       printf("------------------------------\n");
+
        release(obj);
-
-       assert(obj != NULL);
-
+       assert(temp != NULL);
+       release(temp);
 
        return 0;
 }

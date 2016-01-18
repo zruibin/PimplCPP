@@ -9,6 +9,7 @@
     
 #include "Class.h"
 #include <stdio.h>
+#include <string.h>
 
 typedef struct Ivar
 {
@@ -16,7 +17,7 @@ typedef struct Ivar
 };
 
 
-Class * class_init(void)
+Class * Class_init(void)
 {
     Class *obj = alloc(Class);
     obj->super_class = NULL;
@@ -25,6 +26,7 @@ Class * class_init(void)
     obj->version = 1.0;
     obj->info = 1.0;
     obj->description = description;
+    obj->copy = copy;
     obj->printIVar = printIVar;
 
     obj->vars->var = "varName";
@@ -32,9 +34,9 @@ Class * class_init(void)
     return obj;
 }
 
-Class * class_init(const char *name)
+Class * Class_init(const char *name)
 {
-    Class *obj = class_init();
+    Class *obj = Class_init();
     obj->name = name;
     return obj;
 }
@@ -43,6 +45,21 @@ Class * class_init(const char *name)
 void description(Class *obj)
 {
     printf("%s -> %s\n", "This is Class!", obj->name);
+}
+
+Class * copy(Class *obj)
+{
+    Class *object = alloc(Class);
+    
+    /**
+     * 函数原型: void *memcpy(void*dest, const void *src, size_t n);
+     * 功能: 由src指向地址为起始地址的连续n个字节的数据复制到以destin指向地址为起始地址的空间内。
+     * 头文件: #include<string.h>
+     * 返回值: 函数返回一个指向dest的指针。
+     */
+    memcpy(object, obj, sizeof(Class));
+
+    return object;
 }
 
 void printIVar(Class *obj)
