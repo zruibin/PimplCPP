@@ -15,24 +15,24 @@
 #define alloc(Class) (Class *)malloc(sizeof(Class))
 #define release(obj) { if(obj) { free(obj); (obj)=NULL; } }
 
-
 #ifndef __cplusplus
 
 typedef char bool;
-typedef char BOOL;
-typedef char boolean;
+//typedef char BOOL;
+//typedef char boolean;
 
-#define false !0;
-#define true 0;
+#define false 0;
+#define true !0;
 
 #endif /* __cplusplus */
 
+void print(void);
 
-typedef struct Ivar;
 
-// typedef struct objc_class Class;
+typedef struct Ivar Ivar;
+typedef struct objc_class Class;
 
-typedef struct Class /*必须定义*/
+typedef struct objc_class
 {
     Class *super_class;
     Class *isa;
@@ -45,7 +45,7 @@ typedef struct Class /*必须定义*/
     Class * (*copy)(Class *obj);
 
     void (*printIVar)(Class *obj);
-}Class; /*可以不定义*/
+}Class;
 
 /**
  * 默认构造函数
@@ -58,7 +58,7 @@ Class * Class_init(void);
  * @param  name [description]
  * @return      [description]
  */
-Class * Class_init(const char *name);
+Class * Class_initWithName(const char *name);
 
 /**
  * 深拷贝函数
@@ -71,4 +71,9 @@ void description(Class *obj);
 
 void printIVar(Class *obj);
 
+
+
+
 #endif
+
+

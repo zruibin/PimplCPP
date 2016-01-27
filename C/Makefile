@@ -7,10 +7,10 @@ MYLIB=
 SYSLIB=-lpthread
 CFLAG=-g 
 WARNING=-w
-CC=g++
-GCC=g++
+CC=gcc
+GCC=gcc
 OBJDIR=obj/
-INCLUDE= #-I ./ -I asm/ -I Http/ -I Thread/
+INCLUDE=-I ./Lib  #-I ./ -I asm/ -I Http/ -I Thread/
 LIB= #-lcurl  -L./Http/curl -lz
 
 # 当前目录下带路径的所有后缀为.c的源文件

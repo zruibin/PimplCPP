@@ -14,7 +14,7 @@
 typedef struct Ivar
 {
     const char *var;
-};
+}Ivar;
 
 
 Class * Class_init(void)
@@ -34,7 +34,7 @@ Class * Class_init(void)
     return obj;
 }
 
-Class * Class_init(const char *name)
+Class * Class_initWithName(const char *name)
 {
     Class *obj = Class_init();
     obj->name = name;
@@ -50,7 +50,7 @@ void description(Class *obj)
 Class * copy(Class *obj)
 {
     Class *object = alloc(Class);
-    
+
     /**
      * 函数原型: void *memcpy(void*dest, const void *src, size_t n);
      * 功能: 由src指向地址为起始地址的连续n个字节的数据复制到以destin指向地址为起始地址的空间内。
@@ -66,4 +66,3 @@ void printIVar(Class *obj)
 {
     printf("var printIVar ->%s\n", obj->vars->var);
 }
-
