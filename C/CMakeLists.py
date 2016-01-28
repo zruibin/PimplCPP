@@ -5,7 +5,7 @@
 # zruibin.asia
 #
 # Created by Ruibin.Chow on 2016/01/27.
-# Copyright (c) 2015年 www.zruibin.asia. All rights reserved.
+# Copyright (c) 2016年 www.zruibin.asia. All rights reserved.
 #
 
 import os, os.path, shutil
@@ -30,9 +30,9 @@ project(%s)
 
 message(${PROJECT_SOURCE_DIR})
 
-set(CMAKE_C_COMPILER "g++")
+set(CMAKE_C_COMPILER "gcc")
 #set(CMAKE_C_FLAGS "-g -EL -Wa,-mips32r2 -march=24kf -mtune=24kf -I/home/zhangyx/baisiqiao/cs_rootfs_1.2.27/cross_rootfs/include -L/home/zhangyx/baisiqiao/cs_rootfs_1.2.27/cross_rootfs/lib")
-set(CMAKE_CXX_COMPILER "g++")
+set(CMAKE_CXX_COMPILER "gcc")
 
 # Add header file include directories
 include_directories(%s)
@@ -83,6 +83,7 @@ def genEverySubDirCMakeList(DIR, Files):
 
 def make(DIR):
     """返回指定目录下所有文件的集合"""
+    claenAll()
     array = []
     for root, dirs, files in os.walk(DIR):
         genEverySubDirCMakeList(root, files)
@@ -104,10 +105,12 @@ def make(DIR):
     pass
 
 def  claenAll():
-    shutil.rmtree(MAIN_DIR + BUILD_DIR)
+    if os.path.exists(MAIN_DIR + BUILD_DIR):
+        shutil.rmtree(MAIN_DIR + BUILD_DIR)
     for root, dirs, files in os.walk(MAIN_DIR):
         targetFile = root + '/' + CMakeLists
-        os.remove(targetFile)
+        if os.path.exists(targetFile):
+            os.remove(targetFile)
     pass
 
 
