@@ -31,7 +31,7 @@ project(%s)
 message(${PROJECT_SOURCE_DIR})
 
 set(CMAKE_C_COMPILER "gcc")
-#set(CMAKE_C_FLAGS "-g -EL -Wa,-mips32r2 -march=24kf -mtune=24kf -I/home/zhangyx/baisiqiao/cs_rootfs_1.2.27/cross_rootfs/include -L/home/zhangyx/baisiqiao/cs_rootfs_1.2.27/cross_rootfs/lib")
+#set(CMAKE_C_FLAGS "-lz -lm -framework GLUT -framework OpenGL")
 set(CMAKE_CXX_COMPILER "gcc")
 
 # Add header file include directories
@@ -47,7 +47,19 @@ aux_source_directory(. DIRSRCS)
 # Target
 add_executable(${PROJECT_NAME} ${DIRSRCS})
 target_link_libraries(${PROJECT_NAME} %s)
+
+# FIND_PACKAGE(OPENGL)  
+# IF(OPENGL_FOUND)  
+# INCLUDE_DIRECTORIES( ${OPENGL_INCLUDE_DIR} )
+# TARGET_LINK_LIBRARIES(${PROJECT_NAME}
+#                          ${OPENGL_gl_LIBRARY}
+#                          ${OPENGL_glu_LIBRARY}
+# )
+# ELSE(OPENGL_FOUND)  
+#  MESSAGE(FATAL_ERROR "OpenGL library not found")  
+# ENDIF(OPENGL_FOUND)
 """
+
 
 includeList = []
 libList = []
